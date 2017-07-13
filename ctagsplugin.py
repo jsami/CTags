@@ -835,7 +835,7 @@ class RebuildTags(sublime_plugin.TextCommand):
             status_message('Cannot build CTags: No file or folder open.')
             return
         elif 'current_file' in args and args['current_file']:
-            paths.append(self.view.file_name())
+            paths.extend(self.view.window().folders())
             self.build_ctags(paths, command, tag_file, False, opts)
         else:
             show_build_panel(self.view)
