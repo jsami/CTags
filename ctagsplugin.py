@@ -816,7 +816,7 @@ class RebuildTags(sublime_plugin.TextCommand):
     def run(self, edit, **args):
         """Handler for ``rebuild_tags`` command"""
         paths = []
-
+        print("rebuilding ctags")
         command = setting('command')
         recursive = setting('recursive')
         opts = setting('opts')
